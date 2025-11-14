@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lógica e Introdução à Linguagem C — Aula Interativa</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Aula interativa: Lógica e Introdução à Linguagem C. Conteúdo completo com exercícios, timeline e caixas de pseudocódigo editáveis." />
+</head>
+<body>
+
+  <header class="hero" id="topo_da_pagina">
+    <div class="hero__content">
+      <h1 class="hero__title">Lógica & Introdução à C</h1>
+      <p class="hero__subtitle">Aula interativa — objetivos, história, exercícios e mais</p>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- SEÇÃO OBJETIVOS -->
+    <section id="objetivos" class="bloco conteudo">
+      <h2>Objetivos</h2>
+      <ul>
+        <li>Lógica de programação;</li>
+        <li>O que é a linguagem C;</li>
+        <li>Estrutura básica;</li>
+        <li>Primeiro programa; </li>
+        <li>Funções <code>printf</code> e <code>scanf</code>, variáveis básicas.</li>
+      </ul>
+    </section>
+
+    <!-- SEÇÃO HISTÓRIA -->
+    <section id="historia" class="bloco conteudo">
+      <h2>HISTÓRIA DA PROGRAMAÇÃO</h2>
+
+      <h3>Evolução das Linguagens de Programação</h3>
+      <p>As primeiras linguagens eram códigos de máquina inseridos manualmente.</p>
+
+      <aside class="timeline-container" aria-label="Linha do tempo da história da programação">
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">1843</time>
+              <p><strong>Ada Lovelace:</strong> criou o primeiro algoritmo para a máquina de Charles Babbage → considerada a primeira programadora.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">1944–45</time>
+              <p><strong>Konrad Zuse:</strong> criou Plankalkül, primeira linguagem "real".</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">1958</time>
+              <p><strong>ALGOL:</strong> base para linguagens como Pascal, C, C++ e Java.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">1970</time>
+              <p><strong>Pascal (Niklaus Wirth):</strong> fácil de aprender; usada nos primeiros dias da Apple.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">1983</time>
+              <p><strong>C++ (Bjarne Stroustrup):</strong> extensão da linguagem C; usada em MS Office, Photoshop e jogos.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">1991</time>
+              <p><strong>Python (Guido Van Rossum):</strong> simples e versátil; usada por Google, Yahoo e Spotify.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">1995</time>
+              <p><strong>Java (James Gosling):</strong> multiplataforma; presente em computadores e smartphones.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">1995</time>
+              <p><strong>JavaScript:</strong> usada no desenvolvimento web dinâmico; empregada em Gmail e navegadores.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__circle" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <time class="timeline__date">2000</time>
+              <p><strong>C# (Microsoft):</strong> baseada em C++; usada em aplicações de desktop e produtos Microsoft.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SEÇÃO LÓGICA -->
+    <section id="logica" class="bloco conteudo">
+      <h2>LÓGICA DE PROGRAMAÇÃO</h2>
+
+      <h3>O que é</h3>
+      <ul>
+        <li>Base de todo desenvolvimento de software.</li>
+        <li>Divide um problema em etapas menores para facilitar a resolução.</li>
+        <li>Conjunto de instruções organizadas em sequência lógica para atingir um objetivo.</li>
+      </ul>
+
+      <p><strong>Exemplo: programa que calcula a média de notas de um aluno.</strong></p>
+
+      <div class="cmd-box">
+        <pre class="cmd-box__code" id="algoritmo-calcular-media" tabindex="0" aria-label="Pseudocódigo do algoritmo CalcularMedia">
+ALGORITMO CalcularMedia
+
+ESCREVA "Digite as notas: "
+
+LER nota 1
+
+LER nota 2
+
+LER nota 3
+
+media = (nota1 + nota2 + nota3) /3
+
+SE media >= 6 ENTÃO
+
+ESCREVA "Aprovado"
+
+SENÃO
+
+ESCREVA "Reprovado"
+
+ESCREVA o valor da media
+
+FIM
+        </pre>
+      </div>
+
+      <h3>Importância para os programadores</h3>
+      <ul>
+        <li>Resolução de problemas: dividir em partes menores facilita o entendimento e a solução.</li>
+        <li>Eficiência: algoritmos bem planejados consomem menos tempo e recursos.</li>
+        <li>Facilidade de manutenção: código com boa lógica é mais fácil de atualizar e corrigir.</li>
+      </ul>
+
+      <h3>Importância no dia a dia</h3>
+      <ul>
+        <li>Tomada de decisões: usamos lógica para planejar, definir prioridades e criar estratégias (ex.: planejar uma viagem).</li>
+        <li>Comunicação: o raciocínio lógico ajuda a formular respostas coerentes e se expressar com clareza.</li>
+        <li>Solução de problemas: aplicamos lógica ao analisar e resolver situações cotidianas.</li>
+      </ul>
+    </section>
+
+    <!-- SEÇÃO ATIVIDADES -->
+    <section id="atividades" class="bloco conteudo">
+      <h2>ATIVIDADE - PSEUDOCÓDIGO</h2>
+      <div class="atividades-grid">
+        <article class="atividade-card" data-atividade="1">
+          <h3>1. Elabore um algoritmo que leia dois números e mostre a soma deles</h3>
+
+          <label for="atividade-1-codigo" class="visually-hidden">Editor da atividade 1</label>
+          <textarea id="atividade-1-codigo" class="cmd-input" placeholder="Escreva seu pseudocódigo aqui..." aria-label="Editor da atividade 1"></textarea>
+
+          <div class="atividade-card__botoes">
+            <button class="btn btn--primary ver-resolucao" data-target="1" aria-expanded="false">Ver resolução</button>
+            <button class="btn btn--ghost limpar" data-target="1">Limpar</button>
+          </div>
+
+          <div class="correcao-container" id="correcao-1" aria-live="polite" hidden>
+            <label class="correcao-titulo">✓ Correção — Exercício 01</label>
+            <pre class="cmd-box__code correcao-texto">
+INÍCIO
+
+ESCREVA "Digite o primeiro número: "
+
+LEIA n1
+
+ESCREVA "Digite o segundo número: "
+
+LEIA n2
+
+soma = n1 + n2
+
+ESCREVA "A soma é: ", soma
+
+FIM
+            </pre>
+          </div>
+        </article>
+
+        <article class="atividade-card" data-atividade="2">
+          <h3>2. Faça um pseudocódigo de um algoritmo que receba 4 notas, calcule e mostre a média aritmética entre elas.</h3>
+
+          <label for="atividade-2-codigo" class="visually-hidden">Editor da atividade 2</label>
+          <textarea id="atividade-2-codigo" class="cmd-input" placeholder="Escreva seu pseudocódigo aqui..." aria-label="Editor da atividade 2"></textarea>
+
+          <div class="atividade-card__botoes">
+            <button class="btn btn--primary ver-resolucao" data-target="2" aria-expanded="false">Ver resolução</button>
+            <button class="btn btn--ghost limpar" data-target="2">Limpar</button>
+          </div>
+
+          <div class="correcao-container" id="correcao-2" aria-live="polite" hidden>
+            <label class="correcao-titulo">✓ Correção — Exercício 02</label>
+            <pre class="cmd-box__code correcao-texto">
+INÍCIO
+
+ESCREVA "Digite as 4 notas do aluno: "
+
+LER nota1, nota2, nota3, nota 4
+
+média = (nota1 + nota2 + nota3 + nota 4) /4
+
+ESCREVA "A média aritmética entre as notas e: ", média
+
+FIM
+            </pre>
+          </div>
+        </article>
+
+        <article class="atividade-card" data-atividade="3">
+          <h3>3. Escreva um algoritmo que leia uma medida em metros e converta para centímetros.</h3>
+
+          <label for="atividade-3-codigo" class="visually-hidden">Editor da atividade 3</label>
+          <textarea id="atividade-3-codigo" class="cmd-input" placeholder="Escreva seu pseudocódigo aqui..." aria-label="Editor da atividade 3"></textarea>
+
+          <div class="atividade-card__botoes">
+            <button class="btn btn--primary ver-resolucao" data-target="3" aria-expanded="false">Ver resolução</button>
+            <button class="btn btn--ghost limpar" data-target="3">Limpar</button>
+          </div>
+
+          <div class="correcao-container" id="correcao-3" aria-live="polite" hidden>
+            <label class="correcao-titulo">✓ Correção — Exercício 03</label>
+            <pre class="cmd-box__code correcao-texto">
+INÍCIO
+
+ESCREVA "Informe a medida em metros: "
+
+LEIA m
+
+cm = m * 100
+
+ESCREVA "A medida em cm é: ", cm
+
+FIM
+            </pre>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO INTRODUÇÃO À C -->
+    <section id="introducao-c" class="bloco conteudo">
+      <h2>INTRODUÇÃO À LINGUAGEM C</h2>
+
+      <h3>O que é</h3>
+      <ul>
+        <li>Linguagem de programação poderosa e eficiente.</li>
+        <li>Criada por Dennis Ritchie na década de 1970.</li>
+        <li>Desenvolvida para criar o sistema operacional UNIX.</li>
+      </ul>
+
+      <h3>Características</h3>
+      <ul>
+        <li>Rápida, flexível e próxima da linguagem de máquina.</li>
+        <li>Base de muitas linguagens modernas (C++, C#, Java, Python).</li>
+        <li>Considerada o "latim" das linguagens de programação.</li>
+      </ul>
+
+      <h3>Onde é usada</h3>
+      <ul>
+        <li>Sistemas operacionais</li>
+        <li>Drivers e jogos</li>
+        <li>Softwares embarcados e microcontroladores</li>
+        <li>Aplicações de alto desempenho</li>
+      </ul>
+
+      <h3>ESTRUTURA BÁSICA</h3>
+      <div class="tabela-responsiva">
+        <table class="tabela-estrutura" summary="Tabela de elementos da estrutura básica de um programa em C">
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>#include &lt;stdio.h&gt;</code></td>
+              <td>Biblioteca padrão de entrada e saída (Standard Input/Output); dá acesso à funções como printf().</td>
+            </tr>
+            <tr>
+              <td><code>#include &lt;stdlib.h&gt;</code></td>
+              <td>Biblioteca padrão que oferece funções essenciais para tarefas comuns em programação.</td>
+            </tr>
+            <tr>
+              <td><code>int main()</code></td>
+              <td>Função principal, o ponto de partida de todo programa em C.</td>
+            </tr>
+            <tr>
+              <td><code>printf("...");</code></td>
+              <td>Função que "imprime" (exibe) o texto que está entre aspas na tela. Faz parte da entrada a saída dos dados.</td>
+            </tr>
+            <tr>
+              <td><code>scanf();</code></td>
+              <td>Função de entrada, usada para ler dados do teclado e armazená-los em variáveis.</td>
+            </tr>
+            <tr>
+              <td><code>return 0;</code></td>
+              <td>Indica ao sistema operacional que o programa terminou sua execução com sucesso.</td>
+            </tr>
+            <tr>
+              <td><code>Comentários</code></td>
+              <td>Comentários dentro do código.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <section class="atividade-hello">
+        <h3>ATIVIDADE 1 - HELLO, WORLD!</h3>
+        <p>Objetivo: verificar se o ambiente de programação (compilador) está funcionando corretamente.</p>
+        <p>Abra o Dev-C++ ou use um compilador online. Crie um projeto chamado <strong>Aula01</strong> e teste executando (F11).</p>
+
+        <div class="acao-codigo">
+          <button class="btn btn--secondary ver-codigo" data-codigo="hello" aria-expanded="false">Ver correção</button>
+        </div>
+
+        <div class="correcao-codigo correcao-codigo--panel" id="codigo-hello" hidden>
+          <label>💻 Código 1 — Olá Mundo</label>
+          <pre class="cmd-box__code">
+#include &lt;stdio.h&gt;
+
+#include &lt;stdlib.h&gt;
+
+int main(void) {
+    printf("Ola, mundo!\n");
+    return 0;
+}
+          </pre>
+        </div>
+      </section>
+
+      <section class="atividade-nome">
+        <h3>ATIVIDADE 2 – QUAL É O SEU NOME?</h3>
+        <p>Modificar o código do "Hello, World!"; Exibir o seu nome e uma saudação; Por exemplo: "Olá, [Seu Nome]!"</p>
+
+        <div class="acao-codigo">
+          <button class="btn btn--secondary ver-codigo" data-codigo="nome" aria-expanded="false">Ver correção</button>
+        </div>
+
+        <div class="correcao-codigo correcao-codigo--panel" id="codigo-nome" hidden>
+          <label>💻 Código 2 — Qual é o seu nome?</label>
+          <pre class="cmd-box__code">
+#include &lt;stdio.h&gt;
+
+#include &lt;stdlib.h&gt;
+ 
+int main(void) {
+    //variável
+
+    int nome;
+     
+
+    //entrada
+    printf("Qual o seu nome? ");
+    scanf("%i", &nome);
+ 
+
+    //saída
+
+    printf("Olá, %i!",nome);
+
+    return 0;
+}
+          </pre>
+        </div>
+      </section>
+
+      <section class="quiz-mentimeter">
+        <h3>🧠 QUIZ — Fundamentos de C - Mentimeter</h3>
+        <div class="qrcode-wrap" role="img" aria-label="QR code para o quiz Mentimeter">
+          <img id="qrcode-image" alt="QR code para quiz Mentimeter" src="/assets/QRCODE-DINAMICA.jpg" width="220" height="220" />
+          <p class="muted">Abra o app da câmera ou leitor de QR e participe!  </p>
+          <p class="muted">Dificuldades de escanear? use o código <code>7814 7453</code> para entrar!.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- SEÇÃO AVISOS -->
+    <section id="avisos" class="bloco conteudo">
+      <h2>AVISOS</h2>
+      <p>As próximas aulas serão nos dias <strong>21 e 28 de novembro</strong>, a partir das <strong>18h45</strong>.</p>
+      <p>Na próxima aula: variáveis, tipos de dados e operadores!</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__conteudo">
+      <small>Material preparado pelos Conteudistas — Desenvolvido pela equipe Front</small>
+      <div class="rodape__acoes">
+        <button class="btn btn--ghost" id="btn-topo">↑ Topo</button>
+      </div>
+    </div>
+  </footer>
+      <script src="script.js" defer></script>
+</body>
+</html>
